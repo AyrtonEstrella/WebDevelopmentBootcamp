@@ -9,7 +9,6 @@ for (let i = 0; i < buttons.length; i++) {
 // Button click callback function
 function handleClick() {
   playAudio(this.textContent);
-  this.style.color = "#fff";
   buttonAnimation(this.textContent);
 }
 
@@ -49,7 +48,10 @@ function playAudio(letter) {
 }
 
 function buttonAnimation(keyPressed) {
-  var buttonPressed = document.querySelector("." + keyPressed.toLowerCase());
+  var buttonPressed = document.querySelector("." + keyPressed);
 
   buttonPressed.classList.add("pressed");
+  setTimeout(() => {
+    buttonPressed.classList.remove("pressed");
+  }, 100);
 }
