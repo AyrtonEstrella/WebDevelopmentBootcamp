@@ -1,1 +1,5 @@
-jQuery("h1").css("color", "red");
+$("h1").text("Hello World");
+
+$(".first").click(function() {
+  $("button").not(".first").slideToggle();
+});
